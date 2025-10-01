@@ -1,0 +1,9 @@
+<IfModule mod_security.c>
+  SecRuleEngine Off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^api/chat\.php$ - [L]
+</IfModule>
+

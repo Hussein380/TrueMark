@@ -1,0 +1,144 @@
+.tmc-chat-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #111827;
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    z-index: 9999;
+}
+
+.tmc-chat-button.left-hero {
+    left: 24px;
+    right: auto;
+    top: 220px;
+    bottom: auto;
+}
+
+.tmc-chat-window {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 340px;
+    max-height: 70vh;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.tmc-chat-window.left-hero {
+    left: 24px;
+    right: auto;
+    top: 290px;
+    bottom: auto;
+}
+
+.tmc-chat-header {
+    padding: 12px 14px;
+    background: #111827;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tmc-chat-messages {
+    padding: 12px;
+    overflow-y: auto;
+    flex: 1;
+    background: #f9fafb;
+}
+
+.tmc-msg {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.tmc-msg.user {
+    text-align: right;
+}
+
+.tmc-msg.assistant {
+    text-align: left;
+}
+
+.tmc-msg .bubble {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 10px;
+    max-width: 85%;
+}
+
+.tmc-msg.user .bubble {
+    background: #111827;
+    color: #fff;
+}
+
+.tmc-msg.assistant .bubble {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.tmc-chat-input {
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #e5e7eb;
+    padding: 10px;
+    background: #fff;
+}
+
+.tmc-chat-input input {
+    flex: 1;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.tmc-chat-input button {
+    background: #111827;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.tmc-typing {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 6px 0;
+}
+
+/* Responsive: on small screens move to bottom-right and stretch width */
+@media (max-width: 768px) {
+    .tmc-chat-button.left-hero {
+        left: auto;
+        right: 16px;
+        top: auto;
+        bottom: 16px;
+    }
+
+    .tmc-chat-window.left-hero {
+        left: auto;
+        right: 16px;
+        top: auto;
+        bottom: 86px;
+        width: calc(100vw - 32px);
+        max-width: 420px;
+    }
+}

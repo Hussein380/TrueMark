@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Performance: preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts: Sora for headings, Inter for body -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Fix select dropdown contrast in quote modal -->
+  <style>
+    /* Ensure dropdown text is visible against white native menus */
+    select,
+    select option {
+      color: #1f2937;
+    }
+
+    /* gray-800 */
+    select option {
+      background-color: #ffffff;
+    }
+
+    /* Line clamp utilities for blog posts */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Basic SEO -->
+  <meta name="description"
+    content="Truemark Creatives is a Nairobi-based branding and design studio offering logo design, brand identity, corporate branding, and creative marketing services across Kenya." />
+  <meta name="keywords"
+    content="Branding company Kenya, Logo design Nairobi, Creative agency Kenya, Corporate branding services Kenya, Digital marketing & branding Kenya, Brand identity design Kenya, Branding blog Kenya, Design tips Nairobi, Brand strategy Kenya" />
+  <link rel="canonical" href="https://www.truemarkcreatives.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Truemark Creatives" />
+  <meta property="og:title" content="Branding Company in Kenya | Logo Design in Nairobi | Truemark Creatives" />
+  <meta property="og:description"
+    content="Nairobi branding company for logo design, brand identity, and corporate branding. We craft distinctive brands for Kenyan businesses." />
+  <meta property="og:url" content="https://www.truemarkcreatives.com/" />
+  <meta property="og:image" content="/assets/poster-BN3zddlT.jpeg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Branding Company in Kenya | Logo Design in Nairobi" />
+  <meta name="twitter:description"
+    content="Creative agency in Nairobi delivering logo design, brand identity, and corporate branding for Kenyan brands." />
+  <meta name="twitter:image" content="/assets/poster-BN3zddlT.jpeg" />
+  <title>Truemark Creatives</title>
+  <script type="module" crossorigin src="/assets/index-DfEJgL58.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B8J1LZ26.css">
+  <!-- Preload hero image (update href to actual LCP image if different) -->
+  <link rel="preload" as="image" href="/assets/hero1-RQdrZ0Hc.jpeg" fetchpriority="high">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Blog Section -->
+  <section id="blog-section" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest Insights</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Branding tips, design insights, and case studies from our
+          Nairobi studio</p>
+      </div>
+
+      <!-- Blog Posts Container -->
+      <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Posts will be loaded here dynamically -->
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+        <button id="load-more-btn" class="btn-outline" style="display: none;">Load More Posts</button>
+      </div>
+
+      <!-- Loading State -->
+      <div id="blog-loading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-4 text-gray-600">Loading posts...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services strip at top -->
+  <div class="w-full bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <div
+      class="container-custom py-2 text-sm text-gray-600 flex flex-wrap gap-4 items-center justify-center md:justify-between">
+      <div class="font-semibold text-gray-800">What we do:</div>
+      <ul class="flex flex-wrap gap-4">
+        <li>Logo Design</li>
+        <li>Brand Identity</li>
+        <li>Corporate Branding</li>
+        <li>Print & Packaging</li>
+        <li>Marketing Collateral</li>
+        <li><a href="/blog-list.html" class="text-blue-600 hover:text-blue-800 font-medium">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Truemark Creatives",
+    "url": "https://www.truemarkcreatives.com/",
+    "logo": "/logo.jpeg",
+    "description": "Branding company in Nairobi, Kenya offering logo design, brand identity and corporate branding services.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Branding Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Logo Design",
+            "description": "Professional logo design services for businesses in Kenya"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Brand Identity",
+            "description": "Complete brand identity design and strategy"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Corporate Branding",
+            "description": "Corporate branding and marketing collateral design"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD Blog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Truemark Creatives Blog",
+    "description": "Branding tips, design insights, and case studies from our Nairobi studio",
+    "url": "https://www.truemarkcreatives.com/#blog-section",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Truemark Creatives",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.truemarkcreatives.com/logo.jpeg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.truemarkcreatives.com/#blog-section"
+    }
+  }
+  </script>
+  <!-- Details/Contact Modal -->
+  <div id="tmc-modal-overlay" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl mx-4 overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 id="tmc-modal-title" class="text-xl font-semibold">Product inquiry</h3>
+        <button id="tmc-modal-close" aria-label="Close" class="text-gray-600 hover:text-gray-900">
+          <!-- simple X -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <p id="tmc-modal-desc" class="text-gray-600">Tell us a bit about what you need. We’ll get back within 1 business
+          day.</p>
+        <form id="tmc-contact-form" class="grid grid-cols-1 gap-4">
+          <input type="hidden" id="tmc-product" name="product" value="" />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input class="border border-gray-200 rounded-md px-3 py-2" type="text" name="name" placeholder="Your name"
+              required />
+            <input class="border border-gray-200 rounded-md px-3 py-2" type="email" name="email" placeholder="Email"
+              required />
+          </div>
+          <input class="border border-gray-200 rounded-md px-3 py-2" type="text" name="company"
+            placeholder="Company (optional)" />
+          <textarea class="border border-gray-200 rounded-md px-3 py-2" name="message" rows="4"
+            placeholder="Project details, quantities, deadline…" required></textarea>
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button type="button" id="tmc-cancel" class="btn-outline">Cancel</button>
+            <button type="submit" class="btn-primary">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById('tmc-modal-overlay');
+      const closeBtn = document.getElementById('tmc-modal-close');
+      const cancelBtn = document.getElementById('tmc-cancel');
+      const titleEl = document.getElementById('tmc-modal-title');
+      const productInput = document.getElementById('tmc-product');
+      const form = document.getElementById('tmc-contact-form');
+
+      function openModal(productTitle) {
+        titleEl.textContent = productTitle ? (productTitle + ' — Inquiry') : 'Product inquiry';
+        productInput.value = productTitle || '';
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        setTimeout(() => {
+          const first = form.querySelector('input[name="name"]');
+          first && first.focus();
+        }, 0);
+      }
+
+      function closeModal() {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+      }
+
+      function findTitleFromAnchor(anchor) {
+        // Prefer explicit data-title on the link or its container
+        const explicit = anchor.getAttribute('data-title') || anchor.dataset?.title;
+        if (explicit) return explicit;
+        // Walk up to a reasonable container and grab the first heading text
+        const container = anchor.closest('[data-product], article, section, li, .card, .product, .item, div');
+        if (container) {
+          const heading = container.querySelector('h1, h2, h3, h4, [data-title]');
+          if (heading && heading.textContent) return heading.textContent.trim();
+        }
+        // Fallback to link text
+        return (anchor.textContent || 'Product').trim();
+      }
+
+      // Add lazy attributes to existing images
+      (function addLazyAttrs() {
+        document.querySelectorAll('img').forEach(img => {
+          if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+          if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+        });
+      })();
+
+      // Rewrite any product detail links to act like buttons and open the modal
+      function hijackDetailsLinks(root) {
+        const anchors = (root || document).querySelectorAll('a[href*="/products/"], a[href^="/products"]');
+        anchors.forEach(a => {
+          if (a.dataset.tmcHijacked === '1') return;
+          a.dataset.tmcHijacked = '1';
+          a.setAttribute('data-view-details', '');
+          a.setAttribute('role', 'button');
+          a.setAttribute('href', '#');
+          a.addEventListener('click', ev => {
+            ev.preventDefault();
+            const productTitle = findTitleFromAnchor(a);
+            openModal(productTitle);
+          }, true);
+        });
+      }
+
+      // Initial pass and observe future renders from the SPA
+      hijackDetailsLinks(document);
+      const mo = new MutationObserver(mutations => {
+        for (const m of mutations) {
+          m.addedNodes && m.addedNodes.forEach(node => {
+            if (node.nodeType === 1) {
+              hijackDetailsLinks(node);
+            }
+          });
+        }
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+
+      // Lazy load images/videos when in-view via IntersectionObserver
+      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          if (el.dataset.src) {
+            el.src = el.dataset.src;
+            delete el.dataset.src;
+          }
+          if (el.dataset.srcset) {
+            el.srcset = el.dataset.srcset;
+            delete el.dataset.srcset;
+          }
+          if (el.tagName === 'VIDEO') {
+            // load the video when visible
+            el.load();
+          }
+          obs.unobserve(el);
+        });
+      }, { rootMargin: '600px 0px' }) : null; // start loading earlier for perceived snappiness
+
+      function observeLazyMedia(root) {
+        if (!io) return;
+        (root || document).querySelectorAll('img[data-src], img[data-srcset], video[data-src]').forEach(el => io.observe(el));
+      }
+
+      observeLazyMedia(document);
+      // Observe future nodes for lazy media
+      const mediaMO = new MutationObserver(muts => {
+        muts.forEach(m => m.addedNodes && m.addedNodes.forEach(n => {
+          if (n.nodeType === 1) observeLazyMedia(n);
+        }));
+      });
+      mediaMO.observe(document.body, { childList: true, subtree: true });
+
+      // Ensure the hero/LCP image is not lazy and gets high priority, and adjust hero copy/CTAs
+      window.addEventListener('DOMContentLoaded', () => {
+        // Pick the first on-screen <img> as a safe heuristic for LCP
+        const vpH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        const candidates = Array.from(document.images).filter(img => {
+          const r = img.getBoundingClientRect();
+          return r.top < vpH && r.bottom > 0; // in viewport
+        });
+        const lcpImg = candidates[0];
+        if (lcpImg) {
+          lcpImg.setAttribute('loading', 'eager');
+          lcpImg.setAttribute('fetchpriority', 'high');
+          if (!lcpImg.hasAttribute('decoding')) lcpImg.setAttribute('decoding', 'async');
+        }
+
+        // Also eagerly load any other images already in the viewport (e.g., small icons, first product thumb)
+        candidates.slice(1).forEach(img => {
+          img.setAttribute('fetchpriority', 'high');
+          if (img.dataset.src) img.src = img.dataset.src;
+          if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+        });
+
+        // Swap fonts via inline style overrides (force with !important)
+        const style = document.createElement('style');
+        style.textContent = `
+          h1, h2, h3, h4, h5, h6 { font-family: 'Sora', sans-serif !important; letter-spacing: -0.01em; }
+          body { font-family: 'Inter', sans-serif !important; line-height: 1.6; }
+          select, select option { color: #1f2937 !important; }
+        `;
+        document.head.appendChild(style);
+
+        // Robust copy rewrite that survives React re-renders
+        function rewriteCopy(root) {
+          const all = (root || document).querySelectorAll('h1, p, a, button');
+          all.forEach(el => {
+            const t = (el.textContent || '').trim();
+            if (!t) return;
+            if (/Designs\s+that\s+speaks\.?\s+Brands?\s+that\s+shine/i.test(t)) {
+              el.textContent = 'Distinctive branding for Kenyan businesses';
+            } else if (/Where creativity meets innovation/i.test(t)) {
+              el.textContent = 'Nairobi-based studio crafting logo design, brand identity and print that grows trust and sales.';
+            } else if (/^Get Started$/i.test(t)) {
+              el.textContent = 'Get a Free Quote';
+            } else if (/^Learn More$/i.test(t)) {
+              el.textContent = 'See Our Work';
+            }
+          });
+        }
+        rewriteCopy(document);
+        const copyMO = new MutationObserver(muts => muts.forEach(m => {
+          if (m.addedNodes) m.addedNodes.forEach(n => { if (n.nodeType === 1) rewriteCopy(n); });
+          if (m.type === 'characterData') rewriteCopy(document);
+        }));
+        copyMO.observe(document.body, { childList: true, subtree: true, characterData: true });
+      });
+
+      // Intercept clicks on "View Details" or any /products/* link and open the modal instead
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a, button');
+        if (!a) return;
+        const text = (a.textContent || '').trim().toLowerCase();
+        const href = (a.getAttribute('href') || '').trim().toLowerCase();
+        const isProductsHref = href.startsWith('/products') || href.includes('/products/');
+        const isDetailsText = text.includes('view details') || text.includes('details');
+        const isMarked = a.matches('[data-view-details], .view-details');
+        const isDetails = isProductsHref || isDetailsText || isMarked;
+        if (!isDetails) return;
+        e.preventDefault();
+        const productTitle = findTitleFromAnchor(a);
+        openModal(productTitle);
+      }, true);
+
+      // Intercept "Get a Quote" buttons/links site-wide and open the contact modal
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a, button');
+        if (!a) return;
+        const text = (a.textContent || '').trim().toLowerCase();
+        const href = (a.getAttribute('href') || '').trim().toLowerCase();
+        const isQuoteText = text.includes('get a quote') || text === 'quote' || text.includes('free quote');
+        const isQuoteHref = href.includes('quote') || a.matches('[data-quote], .btn-quote');
+        if (!(isQuoteText || isQuoteHref)) return;
+        e.preventDefault();
+        openModal('Get a Quote');
+      }, true);
+
+      // Close handlers
+      [closeBtn, cancelBtn, overlay].forEach(el => {
+        el && el.addEventListener('click', function (ev) {
+          if (ev.target === overlay || ev.currentTarget === closeBtn || ev.currentTarget === cancelBtn) {
+            closeModal();
+          }
+        });
+      });
+
+      // Keyboard: ESC to close
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') closeModal();
+      });
+
+      // Submit handler (mailto). Replace target email below.
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const company = formData.get('company') || '';
+        const message = formData.get('message') || '';
+        const product = formData.get('product') || '';
+        const to = 'truemarkcreatives@gmail.com';
+        const subject = encodeURIComponent('Inquiry: ' + (product || 'Truemark Creatives'));
+        const body = encodeURIComponent(
+          `Product: ${product}\nName: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`
+        );
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        closeModal();
+      });
+    })();
+
+    // Sanity Blog Integration
+    (function () {
+      const SANITY_PROJECT_ID = 'ukfiahop';
+      const SANITY_DATASET = 'production';
+      const SANITY_TOKEN = 'skeGFwoOnptElJIwIvgXIiQ8p1hwatfWVtN4fwfahpVkcJ8HY8Xli1yIg8HB2yd2GEr61YS88cTZV5amOJizHkow08tyPsrhwmmlIl0DPPZCyTxehHMa55xZQZn1bjtI7GxeDWcs60uX991kXfN1EeTQEHfqL3FZSjQJqrmmYhedImYE1gpL';
+
+      // Simple lazy loading for blog images
+      const setupBlogImageLazyLoading = (container) => {
+        if (!container) return;
+
+        const images = container.querySelectorAll('img[loading="lazy"]');
+        if (images.length === 0) return;
+
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  img.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                }
+                imageObserver.unobserve(img);
+              }
+            });
+          }, { rootMargin: '50px 0px' });
+
+          images.forEach(img => imageObserver.observe(img));
+        } else {
+          // Fallback for browsers without IntersectionObserver
+          images.forEach(img => {
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+            }
+          });
+        }
+      };
+
+      const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${SANITY_DATASET}`;
+
+      let currentPage = 0;
+      const postsPerPage = 6;
+      let allPosts = [];
+      let displayedPosts = 0;
+
+      // Sanity GROQ query to fetch blog posts
+      const fetchBlogPosts = async (start = 0, limit = postsPerPage) => {
+        const query = `
+          *[_type == "post"] | order(publishedAt desc) [${start}...${start + limit}] {
+            _id,
+            title,
+            slug,
+            excerpt,
+            featuredImage {
+              asset->{
+                _id,
+                url
+              }
+            },
+            author,
+            publishedAt,
+            categories
+          }
+        `;
+
+        try {
+          const response = await fetch(sanityUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${SANITY_TOKEN}`
+            },
+            body: JSON.stringify({ query })
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          return data.result || [];
+        } catch (error) {
+          console.error('Error fetching blog posts:', error);
+          return [];
+        }
+      };
+
+      // Format date for display
+      const formatDate = (dateString) => {
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      };
+
+      // Create blog post card HTML
+      const createPostCard = (post) => {
+        const imageUrl = post.featuredImage?.asset?.url
+          ? `${post.featuredImage.asset.url}?w=400&h=250&fit=crop&auto=format`
+          : 'https://via.placeholder.com/400x250/f3f4f6/9ca3af?text=No+Image';
+
+        const categories = post.categories || [];
+        const categoryBadges = categories.slice(0, 2).map(category =>
+          `<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-2">${category}</span>`
+        ).join('');
+
+        return `
+          <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="aspect-w-16 aspect-h-9">
+              <img 
+                src="${imageUrl}" 
+                alt="${post.title}"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3">
+                ${categoryBadges}
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
+                ${post.title}
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                ${post.excerpt || 'Read more about this topic...'}
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>${post.author || 'Truemark Creatives'}</span>
+                <span>${formatDate(post.publishedAt)}</span>
+              </div>
+              <div class="mt-4">
+                <a 
+                  href="/blog.html?slug=${post.slug?.current || post._id}"
+                  class="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                >
+                  Read More →
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      };
+
+      // Load and display blog posts
+      const loadBlogPosts = async (append = false) => {
+        const blogContainer = document.getElementById('blog-posts');
+        const loadingDiv = document.getElementById('blog-loading');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+
+        if (!append) {
+          loadingDiv.style.display = 'block';
+          blogContainer.innerHTML = '';
+          currentPage = 0;
+          displayedPosts = 0;
+        }
+
+        try {
+          const posts = await fetchBlogPosts(currentPage * postsPerPage, postsPerPage);
+
+          if (posts.length === 0 && !append) {
+            blogContainer.innerHTML = `
+              <div class="col-span-full text-center py-12">
+                <p class="text-gray-600 text-lg">No blog posts found. Check back soon for updates!</p>
+              </div>
+            `;
+            loadingDiv.style.display = 'none';
+            return;
+          }
+
+          const postsHTML = posts.map(createPostCard).join('');
+
+          if (append) {
+            blogContainer.insertAdjacentHTML('beforeend', postsHTML);
+          } else {
+            blogContainer.innerHTML = postsHTML;
+            allPosts = posts;
+          }
+
+          displayedPosts += posts.length;
+          currentPage++;
+
+          // Show/hide load more button
+          if (posts.length === postsPerPage) {
+            loadMoreBtn.style.display = 'inline-block';
+          } else {
+            loadMoreBtn.style.display = 'none';
+          }
+
+          loadingDiv.style.display = 'none';
+
+          // Add lazy loading to new images
+          setupBlogImageLazyLoading(blogContainer);
+
+        } catch (error) {
+          console.error('Error loading blog posts:', error);
+          loadingDiv.style.display = 'none';
+          blogContainer.innerHTML = `
+            <div class="col-span-full text-center py-12">
+              <p class="text-red-600 text-lg">Error loading blog posts. Please try again later.</p>
+            </div>
+          `;
+        }
+      };
+
+      // Load more posts handler
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      loadMoreBtn.addEventListener('click', () => {
+        loadBlogPosts(true);
+      });
+
+      // Blog posts now use dedicated pages instead of modals
+      // Links are handled by href="/blog/slug" in the HTML
+
+      // Initialize blog when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+      } else {
+        loadBlogPosts();
+      }
+
+      // Make loadBlogPosts globally available for debugging
+      window.loadBlogPosts = loadBlogPosts;
+    })();
+
+    // Add Blog link to main navigation and handle smooth scrolling
+    (function () {
+      let blogLinkAdded = false;
+
+      // Function to add blog link to navigation
+      function addBlogToNavigation() {
+        if (blogLinkAdded) return;
+
+        // Look for the main navigation menu
+        const navSelectors = [
+          'nav a[href*="portfolio"]', // Look for existing nav items
+          'nav a[href*="about"]',
+          'nav a[href*="services"]',
+          'nav a[href*="quote"]'
+        ];
+
+        let targetNav = null;
+        for (const selector of navSelectors) {
+          const existingLink = document.querySelector(selector);
+          if (existingLink) {
+            targetNav = existingLink.parentElement.parentElement; // Get the nav container
+            break;
+          }
+        }
+
+        // If we found the nav, add blog link before "Get Quote"
+        if (targetNav) {
+          const getQuoteLink = targetNav.querySelector('a[href*="quote"], a[href*="Quote"]');
+          if (getQuoteLink) {
+            const blogLink = document.createElement('a');
+            blogLink.href = '#blog-section';
+            blogLink.textContent = 'Blog';
+            blogLink.className = getQuoteLink.className; // Copy the same styling
+            blogLink.style.marginRight = '20px'; // Add some spacing
+
+            getQuoteLink.parentElement.insertBefore(blogLink, getQuoteLink);
+            blogLinkAdded = true;
+            console.log('Blog link added to navigation');
+          }
+        }
+      }
+
+      // Try to add blog link immediately and after DOM changes
+      addBlogToNavigation();
+
+      // Watch for navigation changes and add blog link
+      const navObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          mutation.addedNodes.forEach(function (node) {
+            if (node.nodeType === 1) {
+              // Check if this is a navigation element
+              if (node.querySelector && node.querySelector('nav, a[href*="portfolio"], a[href*="about"]')) {
+                setTimeout(addBlogToNavigation, 100); // Small delay to ensure nav is fully rendered
+              }
+            }
+          });
+        });
+      });
+
+      navObserver.observe(document.body, { childList: true, subtree: true });
+
+      // Also try after a delay in case React takes time to render
+      setTimeout(addBlogToNavigation, 1000);
+      setTimeout(addBlogToNavigation, 3000);
+
+      // Handle clicks on blog navigation links
+      document.addEventListener('click', function (e) {
+        const link = e.target.closest('a[href="#blog-section"]');
+        if (link) {
+          e.preventDefault();
+          const blogSection = document.getElementById('blog-section');
+          if (blogSection) {
+            blogSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+
+            // Add a subtle highlight effect
+            blogSection.style.transition = 'background-color 0.3s ease';
+            blogSection.style.backgroundColor = '#f9fafb';
+            setTimeout(() => {
+              blogSection.style.backgroundColor = '#f9fafb'; // Keep the gray background
+            }, 1000);
+          }
+        }
+      });
+    })();
+  </script>
+  <!-- Truemark Assistant: Floating Chat Widget -->
+  <link rel="stylesheet" href="/assets/chatbot.css">
+  <script src="/assets/chatbot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Performance: preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts: Sora for headings, Inter for body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Blog - Branding Tips & Design Insights | Truemark Creatives</title>
+    <meta name="description"
+        content="Latest insights, branding tips, case studies, and design stories from Truemark Creatives Nairobi studio. Expert advice on logo design, brand strategy, and creative marketing." />
+    <meta name="keywords"
+        content="branding blog Kenya, design tips Nairobi, logo design insights, brand strategy, creative marketing, case studies" />
+    <link rel="canonical" href="https://www.truemarkcreatives.com/blog" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Truemark Creatives" />
+    <meta property="og:title" content="Blog - Branding Tips & Design Insights | Truemark Creatives" />
+    <meta property="og:description"
+        content="Latest insights, branding tips, case studies, and design stories from Truemark Creatives Nairobi studio." />
+    <meta property="og:url" content="https://www.truemarkcreatives.com/blog" />
+    <meta property="og:image" content="/assets/poster-BN3zddlT.jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog - Branding Tips & Design Insights | Truemark Creatives" />
+    <meta name="twitter:description"
+        content="Latest insights, branding tips, case studies, and design stories from Truemark Creatives Nairobi studio." />
+    <meta name="twitter:image" content="/assets/poster-BN3zddlT.jpeg" />
+
+    <!-- JSON-LD Blog Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Truemark Creatives Blog",
+    "description": "Latest insights, branding tips, case studies, and design stories from Truemark Creatives Nairobi studio",
+    "url": "https://www.truemarkcreatives.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Truemark Creatives",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.truemarkcreatives.com/logo.jpeg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.truemarkcreatives.com/blog"
+    }
+  }
+  </script>
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .btn-primary {
+            background-color: #dc2626;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c;
+        }
+
+        .btn-outline {
+            border: 1px solid #d1d5db;
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s;
+            background-color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: #f9fafb;
+            border-color: #9ca3af;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 3px solid #f3f4f6;
+            border-radius: 50%;
+            border-top-color: #3b82f6;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Blog listing styles */
+        .blog-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-content {
+            padding: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+
+        .blog-card p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .blog-card a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .blog-card a:hover {
+            color: #1d4ed8;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin: 0.25rem 0.25rem 0.25rem 0;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: #374151;
+        }
+
+        /* Filter buttons */
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background: white;
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-hero p {
+                font-size: 1rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container-custom">
+            <a href="/" class="nav-back" style="color: rgba(255,255,255,0.8);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                Back to Home
+            </a>
+            <h1>Latest Insights</h1>
+            <p>Branding tips, design insights, and case studies from our Nairobi studio</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container-custom">
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <a href="#" class="filter-btn active" data-category="all">All Posts</a>
+                <a href="#" class="filter-btn" data-category="branding-tips">Branding Tips</a>
+                <a href="#" class="filter-btn" data-category="case-studies">Case Studies</a>
+                <a href="#" class="filter-btn" data-category="design-insights">Design Insights</a>
+                <a href="#" class="filter-btn" data-category="company-updates">Company Updates</a>
+            </div>
+
+            <!-- Blog Posts Container -->
+            <div id="blog-posts" class="blog-grid">
+                <!-- Posts will be loaded here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button id="load-more-btn" class="btn-outline" style="display: none;">Load More Posts</button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="blog-loading" class="text-center py-16">
+                <div class="loading-spinner"></div>
+                <p class="mt-4 text-gray-600">Loading blog posts...</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Sanity Configuration
+        const SANITY_PROJECT_ID = 'ukfiahop';
+        const SANITY_DATASET = 'production';
+        const SANITY_TOKEN = 'skeGFwoOnptElJIwIvgXIiQ8p1hwatfWVtN4fwfahpVkcJ8HY8Xli1yIg8HB2yd2GEr61YS88cTZV5amOJizHkow08tyPsrhwmmlIl0DPPZCyTxehHMa55xZQZn1bjtI7GxeDWcs60uX991kXfN1EeTQEHfqL3FZSjQJqrmmYhedImYE1gpL';
+
+        const sanityUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-05-03/data/query/${SANITY_DATASET}`;
+
+        let currentPage = 0;
+        const postsPerPage = 9;
+        let allPosts = [];
+        let filteredPosts = [];
+        let currentFilter = 'all';
+
+        // Format date for display
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        // Fetch blog posts from Sanity
+        async function fetchBlogPosts(start = 0, limit = postsPerPage) {
+            const query = `
+        *[_type == "post"] | order(publishedAt desc) [${start}...${start + limit}] {
+          _id,
+          title,
+          slug,
+          excerpt,
+          featuredImage {
+            asset->{
+              _id,
+              url
+            }
+          },
+          author,
+          publishedAt,
+          categories
+        }
+      `;
+
+            try {
+                const response = await fetch(sanityUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SANITY_TOKEN}`
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                return data.result || [];
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+                return [];
+            }
+        }
+
+        // Create blog post card HTML
+        function createPostCard(post) {
+            const imageUrl = post.featuredImage?.asset?.url
+                ? `${post.featuredImage.asset.url}?w=400&h=250&fit=crop&auto=format`
+                : 'https://via.placeholder.com/400x250/f3f4f6/9ca3af?text=No+Image';
+
+            const categories = post.categories || [];
+            const categoryBadges = categories.slice(0, 2).map(category =>
+                `<span class="category-badge">${category}</span>`
+            ).join('');
+
+            return `
+        <article class="blog-card">
+          <img src="${imageUrl}" alt="${post.title}" loading="lazy" />
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>${post.author || 'Truemark Creatives'}</span>
+              <span>${formatDate(post.publishedAt)}</span>
+            </div>
+            <h3>${post.title}</h3>
+            <p>${post.excerpt || 'Read more about this topic...'}</p>
+            <div class="mb-3">${categoryBadges}</div>
+            <a href="/blog.html?slug=${post.slug?.current || post._id}">Read More →</a>
+          </div>
+        </article>
+      `;
+        }
+
+        // Load and display blog posts
+        async function loadBlogPosts(append = false) {
+            const blogContainer = document.getElementById('blog-posts');
+            const loadingDiv = document.getElementById('blog-loading');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+
+            if (!append) {
+                loadingDiv.style.display = 'block';
+                blogContainer.innerHTML = '';
+                currentPage = 0;
+            }
+
+            try {
+                const posts = await fetchBlogPosts(currentPage * postsPerPage, postsPerPage);
+
+                if (posts.length === 0 && !append) {
+                    blogContainer.innerHTML = `
+            <div class="col-span-full text-center py-12">
+              <p class="text-gray-600 text-lg">No blog posts found. Check back soon for updates!</p>
+            </div>
+          `;
+                    loadingDiv.style.display = 'none';
+                    return;
+                }
+
+                // Filter posts if needed
+                let postsToShow = posts;
+                if (currentFilter !== 'all') {
+                    postsToShow = posts.filter(post =>
+                        post.categories && post.categories.includes(currentFilter)
+                    );
+                }
+
+                const postsHTML = postsToShow.map(createPostCard).join('');
+
+                if (append) {
+                    blogContainer.insertAdjacentHTML('beforeend', postsHTML);
+                } else {
+                    blogContainer.innerHTML = postsHTML;
+                    allPosts = posts;
+                }
+
+                currentPage++;
+
+                // Show/hide load more button
+                if (posts.length === postsPerPage) {
+                    loadMoreBtn.style.display = 'inline-block';
+                } else {
+                    loadMoreBtn.style.display = 'none';
+                }
+
+                loadingDiv.style.display = 'none';
+
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                loadingDiv.style.display = 'none';
+                blogContainer.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <p class="text-red-600 text-lg">Error loading blog posts. Please try again later.</p>
+          </div>
+        `;
+            }
+        }
+
+        // Filter functionality
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Update active button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Update current filter
+                    currentFilter = btn.dataset.category;
+
+                    // Reload posts with new filter
+                    loadBlogPosts();
+                });
+            });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                loadBlogPosts();
+                setupFilters();
+
+                // Load more button
+                document.getElementById('load-more-btn').addEventListener('click', () => {
+                    loadBlogPosts(true);
+                });
+            });
+        } else {
+            loadBlogPosts();
+            setupFilters();
+
+            document.getElementById('load-more-btn').addEventListener('click', () => {
+                loadBlogPosts(true);
+            });
+        }
+    </script>
+</body>
+
+</html>
