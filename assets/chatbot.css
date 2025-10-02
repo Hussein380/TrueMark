@@ -153,6 +153,13 @@
         bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     }
 
+    .tmc-chat-window {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-width: none;
+    }
+
     .tmc-chat-window.left-hero {
         left: 12px;
         right: 12px;
@@ -177,5 +184,84 @@
     .tmc-chat-window,
     .tmc-chat-window.left-hero {
         max-height: 60vh;
+    }
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-button:hover {
+    background: #20BA5A;
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button .whatsapp-icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.whatsapp-button .whatsapp-text {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111827;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-button:hover .whatsapp-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive WhatsApp button */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        right: 16px;
+        bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .whatsapp-button .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .whatsapp-button .whatsapp-text {
+        right: 60px;
+        font-size: 12px;
+        padding: 6px 10px;
     }
 }

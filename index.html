@@ -39,6 +39,24 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
+    /* Prevent horizontal scrolling on mobile */
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    /* Ensure all containers respect viewport width */
+    .container-custom {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Fix any potential overflow issues */
+    * {
+      box-sizing: border-box;
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -774,6 +792,8 @@
   <!-- Truemark Assistant: Floating Chat Widget -->
   <link rel="stylesheet" href="/assets/chatbot.css">
   <script src="/assets/chatbot.js"></script>
+  <!-- WhatsApp Button -->
+  <script src="/assets/whatsapp.js"></script>
 </body>
 
 </html>
